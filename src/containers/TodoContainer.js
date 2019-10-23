@@ -36,13 +36,16 @@ const mapDispatchToProps =  dispatch => ({
   //   // payload:{id,status}
   // }, TodoResource.updateTodo(id,status))
 
-  updateTodo: (id,status) => dispatch({
-    type: 'UPDATE_TODOS',
-    // payload:{id,status}
-  }, TodoResource.updateTodo(id,status))
-
-
-
+  updateTodo: (todo) => {
+    TodoResource.updateTodo(todo)
+        .then(res=>res.json())
+        .then( ({id,status,content}) => {
+          dispatch({
+            type:'UPDATE_TODO',
+            payload: {id,status,content}
+          })
+        })
+  }
 });
 
 export default connect(
