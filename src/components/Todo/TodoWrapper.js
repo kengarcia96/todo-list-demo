@@ -3,6 +3,8 @@ import TodoInput from './TodoInput'
 import Todos from './Todos'
 import "./Todo.css"
 import TodoResource from '../../api/TodoResource';
+import { Button } from 'antd';
+import 'antd/dist/antd.css';
 
 export default class TodoWrapper extends Component {
 
@@ -24,12 +26,19 @@ export default class TodoWrapper extends Component {
   updateTodos = (todo) => {
     this.props.updateTodo(todo);
   };
+    displayAllTodo = () =>{
+        TodoResource.getActive()
+            .then(res => res.json())
+            .then(res => {this.props.getActive( res._embedded.todos)})
+    }
 
-  render() {
+
+    render() {
     return (
       <div className="todo-wrapper">
         <TodoInput onNewTodoAdded={this.addNewTodo}/>
         <Todos todos={this.props.todos} onChangeStatus={this.updateTodos}/>
+          <Button onClick={this.displayAllTodo}>Active</Button>
       </div>
     )
   }

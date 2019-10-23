@@ -37,6 +37,12 @@ export default (state = initialState, { type, payload }) => {
         todos:[...newTodos]
       };
 
+      case "GET_ACTIVE":
+          return{
+              ...state,
+              todos: payload
+          };
+
     default:
       return state
   }

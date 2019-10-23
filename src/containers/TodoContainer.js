@@ -45,7 +45,13 @@ const mapDispatchToProps =  dispatch => ({
             payload: {id,status,content}
           })
         })
-  }
+  },
+
+    getActive: (todo) => dispatch({
+        type: 'GET_ACTIVE',
+        payload: todo
+    }),
+
 });
 
 export default connect(
