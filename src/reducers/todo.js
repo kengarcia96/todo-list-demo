@@ -23,6 +23,13 @@ export default (state = initialState, { type, payload }) => {
         isOnlyActive: payload
       };
 
+    case "UPDATE_TODO":
+      return {
+        ...state,
+        isOnlyActive: payload
+      };
+
+
     default:
       return state
   }

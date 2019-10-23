@@ -29,7 +29,14 @@ const mapDispatchToProps =  dispatch => ({
   refreshTodos: todos => dispatch({
     type: 'REFRESH_TODOS',
     payload: todos
-  })
+  }),
+
+  updateTodo: (id,status) => dispatch({
+    type: 'UPDATE_TODOS',
+    // payload:{id,status}
+  }, TodoResource.updateTodo(id,status))
+
+
 });
 
 export default connect(
