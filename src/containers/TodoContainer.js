@@ -31,10 +31,16 @@ const mapDispatchToProps =  dispatch => ({
     payload: todos
   }),
 
+  // updateTodo: (id,status) => dispatch({
+  //   type: 'UPDATE_TODOS',
+  //   // payload:{id,status}
+  // }, TodoResource.updateTodo(id,status))
+
   updateTodo: (id,status) => dispatch({
     type: 'UPDATE_TODOS',
     // payload:{id,status}
   }, TodoResource.updateTodo(id,status))
+
 
 
 });

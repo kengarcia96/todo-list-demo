@@ -1,5 +1,5 @@
 .todo-item {
-    font-size: 3rem;
+    font-size: 2rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -20,7 +20,7 @@
     margin: auto;
     cursor: pointer;
     font-size: 22px;
-    line-height: 24px;
+    line-height: 30px;
     height: 24px;
     width: 24px;
     clear: both;
